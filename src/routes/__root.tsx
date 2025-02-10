@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { createRootRoute, Outlet } from '@tanstack/react-router'
+import { ModeToggle } from '@/components/mode-toggle'
 
 const TanStackRouterDevtools = import.meta.env.PROD
   ? () => null
@@ -12,6 +13,7 @@ const TanStackRouterDevtools = import.meta.env.PROD
 export const Route = createRootRoute({
   component: () => (
     <>
+      <ModeToggle />
       <Outlet />
       <Suspense>
         <TanStackRouterDevtools position='bottom-right' />
